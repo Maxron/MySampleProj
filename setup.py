@@ -25,5 +25,10 @@ setuptools.setup(
     ],
     keywords="sample setuptools development",
 
-    install_requires=[]
+    install_requires=[],
+    entry_points = {
+        "console_scripts" : [
+            "demo_wei = app.__main__:runDemo"
+        ]
+    }
 )
