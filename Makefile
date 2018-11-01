@@ -4,6 +4,7 @@ WORKSPACE := $(PWD)
 DIST_FOLDER := $(WORKSPACE)/dist/
 BUILD_TARGET := $(WORKSPACE)/build/
 EGG_TARGET := $(WORKSPACE)/MySampleProj.egg-info/
+DEMO_COMMAND := demo_wei
 
 TARGET_FILE = $(shell find dist -iname MySampleProj*.tar.gz |sort -r |head -n 1)
 
@@ -16,9 +17,17 @@ build: app/__main__.py
 install: $(TARGET_FILE)
 	@echo "Target file: "$(TARGET_FILE)
 ifeq ($(TARGET_FILE),)
-	@echo "No such file found !!"
+	$(error "No such file found !!")
 else
 	pip install $(TARGET_FILE)
+endif
+
+.PHONY: demo
+demo:
+ifeq ( ,$(shell which $(DEMO_COMMAND)))
+	$(error "Demo command not found !! : $(DEMO_COMMAND)")
+else
+	demo_wei
 endif
 
 .PHONY: clean

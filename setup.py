@@ -28,7 +28,7 @@ setuptools.setup(
     install_requires=[],
     entry_points = {
         "console_scripts" : [
-            "demo_wei = app.__main__:runDemo"
+            "demo_wei = app.__main__:main"
         ]
     }
 )
