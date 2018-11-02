@@ -2,7 +2,18 @@
 
 A sample project for python to description python package.
 
-## Usage
+## Getting start
+
+### Environment request
+- python 3.6+
+- [pipenv](https://github.com/pypa/pipenv)
+
+### Install depencies
+```bash
+$ pipenv install
+```
+
+### Run task
 Use _make_ command for task running
 
 #### All
